@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 창</title>
+<script type="text/javascript">
+	function fn_join() {
+		var jm = document.jm;
+		var id = jm.id.value;
+		var pwd = jm.pwd.value;
+		var name = jm.name.value;
+		var email = jm.email.value;
+		
+		if(id.length == 0 || id == "") {
+			alert("아이디를 입력하세요.");	
+		}
+		else if(pwd.length == 0 || pwd =="") {
+			alert("비밀번호를 입력하세요.");
+		}
+		else if(name.length == 0 || name =="") {
+			alert("이름을 입력하세요.");
+		}
+		else if(email.length == 0 || email =="") {
+			alert("이메일을 입력하세요.");
+		}
+		else {
+			jm.submit();
+		}
+		
+		
+	}
+
+</script>
+</head>
+<body>
+	<form name = "jm" method = "post" action = "joinserv">
+	아이디 : <input type="text" name="id"><br>
+	비밀번호 : <input type="text" name="pwd"><br>
+	이름 : <input type="text" name="name"><br>
+	이메일 : <input type="text" name="email"><br>
+	<input type = "button" value = "확인" onclick = "fn_join()">
+	
+	</form>
+</body>
+</html>
