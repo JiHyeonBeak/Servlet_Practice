@@ -5,57 +5,66 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
-
-import org.apache.catalina.Context;
-
 public class MemberDAO {
 	
 	private Connection con;
 	private PreparedStatement pstmt;
-	private DataSource dataFactory;
+	private ResultSet rs;
 	
-	public MemberDAO() { //커넥션 풀 적용
+	private void ConnDB() { //커넥션 풀 적용, 오라클 접속
 		try {
-			Context ctx = (Context) new InitialContext();
-			Context envContext = (Context) ((InitialContext) ctx).lookup("java:/comp/env"); 
-			dataFactory = (DataSource) ((InitialContext) envContext).lookup("jdbc/oracle");
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-	}
-	
-	public void Member() throws SQLException {
-		List memberlist = new ArrayList();
 		
-		con = dataFactory.getConnection();
-		String sql = "select * from t_member"; // sql 문
-		pstmt = con.prepareStatement(sql); // 질의
-		ResultSet rs = pstmt.executeQuery(); // pstmt의 결과
-		
-		while(rs.next()) { //다음행이 있을때 까지, rs가 참이면...
-		String id = rs.getString("id"); //테이블의 id값을 string으로 가져온다.
-		String pwd = rs.getString("pwd");
-		String name = rs.getString("name");
-		String email = rs.getString("email");
-		Date joinDate = rs.getDate("joinDate");
-		
-		MemberVO vo = new MemberVO();
-		
-		vo.setId(id);
-		vo.setPwd(pwd);
-		vo.setEmail(email);
-		vo.setName(name);
-		vo.setJoinDate(joinDate);
-		
+		try {
+			String url = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
+			String user = "system";
+			String pwd = "oracle";
+			con = DriverManager.getConnection(url, user, pwd);
+			System.out.println("오라클 접속");
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("접속 실패");
 		}
 	}
-	public void MemberAdd() throws SQLException{
-		con = dataFactory.getConnection();
-		String sql = "insert into t_member values(?,?,?,?,?)"; // sql 문
-		pstmt = con.prepareStatement(sql); // 질의
-		ResultSet rs = pstmt.executeQuery(); // pstmt의 결과
+	
+	public boolean checkId(String user_id,String user_pwd){
+		boolean result = false;
+		try {
+			ConnDB();
+			String sql = "select pwd from t_member where id=?"; // sql 문
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, user_id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				if(rs.getString("pwd") != null && rs.getString("pwd").equals(user_pwd)) {
+					result=true;
+					System.out.println("rs참값에 pw찾음");
+				}else {
+					result=false;
+					System.out.println("rs참값에 pw못찾음");
+				}
+			}else {
+				result=false;	
+				System.out.println("rs거짓");
+			}
+		
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	public void MemberAdd(){
+		try {
+			String sql = "insert into t_member values(?,?,?,?,?)"; // sql 문
+			pstmt = con.prepareStatement(sql); // 질의
+			ResultSet rs = pstmt.executeQuery(); // pstmt의 결과
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
 		
 	}
 
