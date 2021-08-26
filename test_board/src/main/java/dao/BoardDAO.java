@@ -28,12 +28,12 @@ public class BoardDAO {
 		}
 	}
 	
-	public int addBoard(MemberVO vo) {
+	public int addBoard(BoardVO bvo) {
 		int result = 0;
-		BoardVO bvo = new BoardVO();
 		connDB();
 		String sql = "insert into t_board values(t_board_seq.nextval,?,?,?,?)";
 		try {
+			System.out.println("dao상의 콘텐츠내용 : "+bvo.getContent());
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bvo.getTitle());
 			pstmt.setString(2, bvo.getContent());
