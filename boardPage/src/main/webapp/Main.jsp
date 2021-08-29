@@ -8,24 +8,33 @@
 <head>
 <meta charset="UTF-8">
 <title>메인페이지</title>
+<link rel="stylesheet" type="text/css" href="css/css_main.css">
 </head>
 <body>
-	<form action="addServ" method="post">
-	제목 : <textarea rows="3" cols="3" name="title"></textarea>
-	내용 : <textarea rows="3" cols="3" name="content"></textarea>
-	<input type="submit" value="확인">
-	</form>
-	<form action="boardServ" method="post">
+	<center>
+	<h1>익명의 메아리 창고</h1>
+	<div id='back'>
+	<form action="addServ" method="post" id="txt">
 	<table>
+	<tr><td>제목 : </td><td><textarea rows="3" cols="100" name="title"></textarea></td>
+	<td rowspan="4"><input id="add" type="submit" value="확인"></td></tr>
+	<tr><td>내용 : </td><td><textarea rows="15" cols="100" name="content"></textarea></td></tr>
+	</table>
+	</form>
+	<form action="boardServ" method="post" id="posts">
+	<table id='res'>
 	<c:forEach var="board" items="${boardlist }">
 	<tr>
 	<td>${board.no }</td>
-	<td>${board.title }</td>
-	<td>${board.content }</td>
-	<td>${board.wdate }</td>
-	</tr>
+	<td>${board.title }</td></tr>
+	<tr>
+	<td>${board.content }</td></tr>
+	<tr>
+	<td>${board.wdate }</td></tr>
 	</c:forEach>
 	</table>
 	</form>
+	</div>
+	</center>
 </body>
 </html>

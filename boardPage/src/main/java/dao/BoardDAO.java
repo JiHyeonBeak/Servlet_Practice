@@ -36,8 +36,8 @@ public class BoardDAO {
 			String sql = "insert into newboard(no,title,content) values(new_seq.nextval,?,?)";
 			pstmt = con.prepareStatement(sql);
 			
-			pstmt.setString(1,vo.getContent());
-			pstmt.setString(2, vo.getTitle());
+			pstmt.setString(1,vo.getTitle());
+			pstmt.setString(2, vo.getContent());
 			
 			pstmt.executeUpdate();
 			
@@ -54,7 +54,7 @@ public class BoardDAO {
 		connDB();
 		List<BoardVO> list = new ArrayList<BoardVO>();
 		try {
-			String sql = "select * from newboard order by no desc";
+			String sql = "select * from (select * from newboard order by no desc)where rownum <= 5";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
@@ -67,8 +67,6 @@ public class BoardDAO {
 				
 				list.add(bvo);
 			}
-			
-			
 			
 		}catch(Exception e) {
 			e.printStackTrace();

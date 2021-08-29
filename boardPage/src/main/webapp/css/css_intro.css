@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'dung';
+	src : url('../font/DungGeunMo.woff');
+}
+*{
+	font-family: 'dung';
+}
+
+#ent {
+	position:absolute;
+	top:200px;
+	font-size: 30px;
+}
+
+#ent:hover {
+	color: gray;
+}
+
+#con{
+	text-align: center;
+	font-size: 20px;
+}
+#stress{
+	text-align: center;
+	animation:typing 4s step(30,end) 1;
+	font-size:35px;
+}
+
+#info {
+	width:500px;
+	height:500px;
+	background-color: #165f82;
+	color: #80959e;
+	border:1px solid #a0c9db;
+}
+
+#entry {
+	position: absolute;
+	top:250px;
+	left:690px;
+	border:none;
+	background-color:rgba(0,0,0,0);
+	width:500px;
+	height:500px;
+}
+
+body {
+	width:100%;
+	height:100%;
+	background:linear-gradient(to bottom, #135775 20% , #03638f 40%, #047cb3);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	overflow: hidden;
+}
+
+#star{
+	color:white;
+	animation-name:kira;
+	animation-duration:2s;
+	animation-iteration-count:infinite;
+}
+#star2{
+	color:white;
+	animation-name:kira;
+	animation-duration:3s;
+	animation-iteration-count:infinite;
+}
+
+@keyframes kira{
+	0%{
+		position:relative;
+		left:80px;
+		top:0px;
+	}
+	50% {
+		position:relative;
+		left:160px;
+		top:150px;
+	}
+	100%{
+		opacity:0%;
+	}
+	
+}
