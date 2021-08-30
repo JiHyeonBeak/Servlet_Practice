@@ -50,6 +50,10 @@ h1 {
 	height:300px;
 }
 
+td {
+	border:1px solid black;
+}
+
 textarea {
 	resize: none;
 	font-family: 'dung';

@@ -16,3 +16,4 @@
 			document.getElementById('stress').innerText='     ';
 		}
 	}, 350);
+	

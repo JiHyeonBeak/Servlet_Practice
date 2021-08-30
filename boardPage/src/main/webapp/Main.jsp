@@ -8,6 +8,12 @@
 <head>
 <meta charset="UTF-8">
 <title>메인페이지</title>
+<script type="text/javascript">
+	var dt = new Date();
+	var day = dt.toDateString();
+	document.getElementById('day').innerText = day;
+
+</script>
 <link rel="stylesheet" type="text/css" href="css/css_main.css">
 </head>
 <body>
@@ -16,6 +22,7 @@
 	<div id='back'>
 	<form action="addServ" method="post" id="txt">
 	<table>
+	<tr><td><p id='day'></p></td></tr>
 	<tr><td>제목 : </td><td><textarea rows="3" cols="100" name="title"></textarea></td>
 	<td rowspan="4"><input id="add" type="submit" value="확인"></td></tr>
 	<tr><td>내용 : </td><td><textarea rows="15" cols="100" name="content"></textarea></td></tr>
@@ -25,10 +32,10 @@
 	<table id='res'>
 	<c:forEach var="board" items="${boardlist }">
 	<tr>
-	<td>${board.no }</td>
-	<td>${board.title }</td></tr>
+	<td  colspan='1'>${board.no }</td>
+	<td colspan='4'>${board.title }</td></tr>
 	<tr>
-	<td>${board.content }</td></tr>
+	<td colspan='4'>${board.content }</td></tr>
 	<tr>
 	<td>${board.wdate }</td></tr>
 	</c:forEach>
