@@ -18,10 +18,11 @@
 	<br>
 	<p id='con'>아무에게도 말하지 못한 이야기를 모집합니다.</p><br>
 	<p id="stress"></p>
-	</div>
+	
 	<div id='entry'>
 	<p id='star'>\</p><br><br>
 	<center><p id='ent' onclick="oncl()">메아리창고 입장</p></center>
+	</div>
 	</div>
 	</form>
 	</center>
