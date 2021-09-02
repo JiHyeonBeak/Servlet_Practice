@@ -14,7 +14,7 @@
 <table class='list'>
 <tr>
 <td colspan='5'>
-<a href='BoardServlet?command=board_write_form'>게시글 등록</a>
+<a href='../BoardServlet?command=board_write_form'>게시글 등록</a>
 </td>
 </tr>
 <tr><th>번호</th></tr><tr><th>제목</th></tr><tr><th>작성자</th></tr><tr><th>작성일</th></tr><tr><th>조회</th></tr>

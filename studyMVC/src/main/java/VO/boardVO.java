@@ -2,7 +2,7 @@ package VO;
 
 import java.sql.Timestamp;
 
-public class boardVO {
+public class BoardVO {
 	int num;
 	String name;
 	String email;
