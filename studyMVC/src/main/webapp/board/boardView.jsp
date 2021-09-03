@@ -7,6 +7,12 @@
 <head>
 <meta charset="UTF-8">
 <title>게시판</title>
+<script type="text/javascript">
+function open_win(url,name) {
+	window.open(url,name,"width=500,height=230");
+}
+
+</script>
 </head>
 <body>
 	<div id='wrap' align='center'>
@@ -23,8 +29,8 @@
 	<tr><th>내용</th><td colspan='3'><pre>${board.content }</pre></td></tr>
 	</table>
 	
-	<input type='button' value='수정' onclick="open_win('BoardServlet?command=board_check_pass_form&num=${board.num}','update)">
-	<input type='button' value='삭제' onclick="open_win('BoardServlet?command=board_check_pass_form&num=${board.num}','delete)">
+	<input type='button' value='수정' onclick="open_win('BoardServlet?command=board_check_pass_form&num=${board.num}','update')">
+	<input type='button' value='삭제' onclick="open_win('BoardServlet?command=board_check_pass_form&num=${board.num}','delete')">
 	<input type='button' value='게시글리스트' onclick="location.href='BoardServlet?command=board_list'">
 	
 	</div>
