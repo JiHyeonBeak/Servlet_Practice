@@ -42,6 +42,8 @@ public class boardDAO {
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
+			
+			
 			while(rs.next()) {
 				BoardVO vo = new BoardVO();
 				

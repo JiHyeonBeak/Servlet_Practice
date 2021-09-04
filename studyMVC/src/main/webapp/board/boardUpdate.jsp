@@ -21,7 +21,7 @@
 	<tr><th>내용</th><td><textarea cols='70' row='15' name='content'>${board.content }</textarea></td></tr>
 	</table>
 	<br><br>
-	<input type='sumbit' value='등록' onclick='return boardCherck()'>
+	<input type='submit' value='등록' onclick='return boardCherck()'>
 	<input type='button' value='목록' onclick="location.href='BoardServlet?command=board_list'">
 	</form>
 </div>

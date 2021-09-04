@@ -13,8 +13,8 @@
 <form name='frm' method='post' action='BoardServlet'>
 <input type='hidden' name='command' value='board_write'>
 <table>
-	<tr><th>작성자</th><td><input type='text' name='name'>* 필수</td></tr>
-	<tr><th>비밀번호</th><td><input type='password' name='pass'>* 필수 (게시글 삭제시 필요)</td></tr>
+	<tr><th>작성자</th><td><input type='text' name='name'> * 필수</td></tr>
+	<tr><th>비밀번호</th><td><input type='password' name='pass'> * 필수 (게시글 삭제시 필요)</td></tr>
 	<tr><th>이메일</th><td><input type='text' name='email'></td></tr>
 	<tr><th>제목</th><td><input type='text' size='70' name='title'></td></tr>
 	<tr><th>내용</th><td><textarea cols='70' rows='15' name='content'></textarea></td></tr>

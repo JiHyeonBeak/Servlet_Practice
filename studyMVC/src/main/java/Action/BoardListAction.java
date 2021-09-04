@@ -21,7 +21,6 @@ public class BoardListAction implements Action{
 		
 		List<BoardVO> list = dao.selectAllBoard();
 		
-		
 		request.setAttribute("boardList", list);
 		
 		RequestDispatcher dis = request.getRequestDispatcher(url);

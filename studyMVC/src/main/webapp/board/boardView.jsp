@@ -7,6 +7,18 @@
 <head>
 <meta charset="UTF-8">
 <title>게시판</title>
+<style>
+	table {
+	border: 1px solid black;
+	}
+	td {
+	border: 1px solid black;
+	}
+	tr {
+	border: 1px solid black;
+	}
+
+</style>
 <script type="text/javascript">
 function open_win(url,name) {
 	window.open(url,name,"width=500,height=230");

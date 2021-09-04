@@ -22,7 +22,7 @@ public class ActionFactory {
 		}else if(command.equals("board_update")) {
 			action = new BoardUpdateAction();
 		}else if(command.equals("board_delete")) {
-			action =
+			action = new BoardDeleteAction();
 		}
 		return action;
 	}
