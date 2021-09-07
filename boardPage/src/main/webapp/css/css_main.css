@@ -49,10 +49,31 @@ h1 {
 	border:1px solid black;
 	height:300px;
 	font-size: 20px;
+	position: relative;
+	bottom:100px;
+}
+
+#all {
+	position: relative;
+	bottom:50px;
 }
 
 td {
 	border:1px solid black;
+}
+
+tr {
+	border : 1px solid black;
+}
+
+#dy{
+	text-align:right;
+	font-size:30px;
+}
+
+#inp{
+	position: relative;
+	bottom:100px;
 }
 
 textarea {
