@@ -43,7 +43,7 @@ function open_win(url,name) {
 	
 	<input type='button' value='수정' onclick="open_win('BoardServlet?command=board_check_pass_form&num=${board.num}','update')">
 	<input type='button' value='삭제' onclick="open_win('BoardServlet?command=board_check_pass_form&num=${board.num}','delete')">
-	<input type='button' value='게시글리스트' onclick="location.href='BoardServlet?command=board_list'">
+	<input type='button' value='게시글리스트' onclick="location.href='./BoardServlet?command=board_list'">
 	
 	</div>
 </body>

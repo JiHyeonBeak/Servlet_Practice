@@ -28,14 +28,14 @@
 <table class='list'>
 <tr>
 <td colspan='5'>
-<a href='../BoardServlet?command=board_write_form'>게시글 등록</a>
+<a href='./BoardServlet?command=board_write_form'>게시글 등록</a>
 </td>
 </tr>
 <tr><th>번호</th><th>제목</th><th>작성자</th><th>작성일</th><th>조회</th></tr>
 <c:forEach var='bo' items='${boardList }'>
 <tr class='record'>
 <td>${bo.num }</td>
-<td><a href='BoardServlet?command=board_view&num=${bo.num }'>${bo.title }</a></td>
+<td><a href='./BoardServlet?command=board_view&num=${bo.num }'>${bo.title }</a></td>
 <td>${bo.name }</td>
 <td>${bo.writedate }</td>
 <td>${bo.readcount }</td>

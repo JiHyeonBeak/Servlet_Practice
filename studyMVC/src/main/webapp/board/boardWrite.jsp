@@ -22,7 +22,7 @@
 <br><br>
 <input type='submit' value='등록'>
 <input type='reset' value='다시쓰기'>
-<input type='button' value='목록' onclick="location.href='../BoardServlet?command=board_list'">
+<input type='button' value='목록' onclick="location.href='/studyMVC/BoardServlet?command=board_list'">
 </form>
 </div>
 </body>
