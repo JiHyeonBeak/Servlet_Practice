@@ -32,6 +32,7 @@ function time(){
 	<tr><td id='dy'colspan="100"><p id='day'></p></td></tr>
 	<tr><td>제목 : </td><td><textarea rows="3" cols="100" name="title"></textarea></td>
 	<td rowspan="4"><input id="add" type="submit" value="확인"></td></tr>
+	<tr><td>비밀번호 : </td><td><textarea rows="2" cols="100" name="pwd"></textarea></td></tr>
 	<tr><td>내용 : </td><td><textarea rows="15" cols="100" name="content"></textarea></td></tr>
 	</table>
 	</form>
@@ -41,7 +42,9 @@ function time(){
 	<c:forEach var="board" items="${boardlist }">
 	<tr>
 	<td>${board.no }</td>
-	<td colspan="2">${board.title }</td></tr>
+	<td colspan="2">${board.title }</td>
+	<td><button>삭제</button><button>수정</button></td>
+	</tr>
 	<tr>
 	<td colspan="4">${board.content }</td></tr>
 	<tr>
