@@ -6,6 +6,8 @@
 }
 *{
 	font-family: 'dung';
+	margin: 0;
+	padding: 0;
 }
 
 body {
@@ -22,13 +24,13 @@ body {
 }
 #add {
 	width: 80px;
-	height:252px;
+	height:372px;
 	background-color: #78bdde;
 	border: none;
 }
 
 table {
-	text-align: center;
+	border: 1px solid black;
 }
 
 h1 {
@@ -81,6 +83,7 @@ textarea {
 	font-family: 'dung';
 	background-color: rgba(167,219,242,0.3);
 	border: 1px solid #abc5d1;
+	padding:0px;
 }
 
 @keyframes kira{
