@@ -23,8 +23,8 @@ body {
 	font-size: 30px;
 }
 #add {
-	width: 80px;
-	height:372px;
+	width: 60px;
+	height:342px;
 	background-color: #78bdde;
 	border: none;
 }
@@ -75,7 +75,10 @@ tr {
 
 #inp{
 	position: relative;
-	bottom:100px;
+	bottom:50px;
+}
+#line{
+	border : 1px solid gray;
 }
 
 textarea {
